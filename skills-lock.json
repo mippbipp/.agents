@@ -205,6 +205,13 @@
       "sourceType": "github",
       "skillPath": "skills/convex-verify/SKILL.md",
       "computedHash": "dbe65a37ca2e9a5afa55669b8928ce1dc3ac765151452008f9105bde049228f7"
+    },
+    "strobe": {
+      "source": "anomalyco/strobe",
+      "sourceType": "github",
+      "skillPath": "skill/SKILL.md",
+      "computedHash": "4861e31c24753153561b67f0810adf956a1cd49b322f4a4d73ddee209f09c7d9",
+      "installMode": "copy"
     }
   }
 }
