@@ -86,3 +86,4 @@ OpenCode has no Cursor Automations, Bugbot, cloud agents, Custom Modes or `/loop
 | Bugbot | Bugbot comments on a GitHub PR are ordinary review threads. Triage them with the `gh` commands the step gives. Skip a step that starts or waits for Bugbot when the PR has none. |
 | Cursor Projects (a coordinator thread with cloud subagents) | one long-lived OpenCode session on pewter, run by the `poteto` agent, with subagents in worktrees. See the Orchestrate playbook. |
 | Cursor's `create-skill` | the `writing-for-agents` skill. |
+| `/reflect` | Not installed. Point the user to the `retro` skill. |

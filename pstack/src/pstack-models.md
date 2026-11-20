@@ -14,8 +14,6 @@ how explorer: kiro/claude-haiku-5.5#medium
 how explainer: kiro/claude-sonnet-5.5#medium
 why investigators: kiro/claude-haiku-5.5#medium
 why synthesizer: kiro/claude-sonnet-5.5#medium
-reflect tooling: kiro/claude-haiku-5.5#medium
-reflect judgment, divergent, synthesizer: kiro/claude-opus-5.5#high
 arena runners: kiro/claude-sonnet-5.5#medium, kiro/gpt-5.6-luna#max
 arena cross-judge pool: kiro/gpt-5.6-luna#max, kiro/claude-sonnet-5.5#medium
 swarm workers: kiro/claude-haiku-5.5#medium
