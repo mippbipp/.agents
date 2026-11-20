@@ -10,8 +10,8 @@ three separate axes:
 
 - **Correctness**: use pstack's `interrogate` flow. Keep a finding only when
   its repro fails against the real code and breaks the stated intent.
-- **Standards**: check documented repository rules. Report only rules the
-  repository has written down.
+- **Standards**: check documented repository rules and the comment rule below.
+  Report only rules the repository has written down, plus the comment rule.
 - **Spec**: check whether the diff implements the originating issue or spec.
 
 Run the three axes in parallel. Report them separately and do not rank one
@@ -62,12 +62,12 @@ start more.
 
 The **Standards** subagent gets the fixed-point diff, commit list and the list
 of standards files. Ask it to report every documented-rule violation by file or
-hunk, citing the source file and rule. Skip anything tooling enforces. Keep the
-report under 400 words.
+hunk, citing the source file and rule. Skip anything tooling enforces. Also
+give it the comment rule below. Keep the report under 400 words.
 
 The **Spec** subagent gets the fixed-point diff, commit list and the spec, if
-one exists. Ask it to report missing or partial requirements, scope creep and
-implementations that look wrong. Quote the relevant spec line for each finding.
+one exists. Ask it to report missing or partial requirements and scope creep.
+Leave bugs to Correctness. Quote the relevant spec line for each finding.
 Keep the report under 400 words.
 
 ### 4. Aggregate
@@ -82,3 +82,18 @@ Present the reports under these headings:
 
 Keep the reports separate. End with the finding count and worst issue within
 each axis, if any. Do not choose one overall winner.
+
+## Comment rule
+
+A comment in the diff may stay only if it is one of the exceptions in
+`~/.agents/pstack/agents/comment-sicko.md`. Report every other comment with
+its category and action:
+
+- **Tautology**: repeats what the code already shows. Delete it.
+- **Stale**: describes code or behaviour that no longer exists. Delete it.
+- **Excuse**: justifies a shortcut or hacky implementation. Delete it and file
+  an issue to fix the shortcut.
+- **Decision record**: documents a non-obvious decision about our own code.
+  Move it into an ADR.
+
+The review reports these actions and does not carry them out.
